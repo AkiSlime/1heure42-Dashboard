@@ -14,13 +14,13 @@ export default defineType({
     }),
     defineField({
       name: 'lieu',
-      title: 'Lieu',
+      title: 'Nom de l\'événement',
       type: 'string',
       validation: Rule => Rule.required(),
     }),
     defineField({
       name: 'ville',
-      title: 'Ville',
+      title: 'Adresse',
       type: 'string',
       validation: Rule => Rule.required(),
     }),

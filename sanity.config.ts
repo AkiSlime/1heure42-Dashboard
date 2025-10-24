@@ -1,7 +1,9 @@
 import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
-import {visionTool} from '@sanity/vision'
+import {frFRLocale} from '@sanity/locale-fr-fr'
 import {schemaTypes} from './schemaTypes'
+import {myStructure} from './deskStructure'
+import {CustomNavbar} from './components/CustomNavbar'
 
 export default defineConfig({
   name: 'default',
@@ -9,8 +11,17 @@ export default defineConfig({
 
   projectId: '4x1az7nc',
   dataset: 'production',
+  studioHost: 'uneheure42',
 
-  plugins: [structureTool({structure: myStructure}), visionTool()],
+  icon: () => '🎧',
+
+  studio: {
+    components: {
+      navbar: CustomNavbar,
+    }
+  },
+
+  plugins: [structureTool({structure: myStructure}), frFRLocale()],
 
   schema: {
     types: schemaTypes,

@@ -19,5 +19,13 @@ export default defineType({
       of: [{type: 'block'}],
       validation: Rule => Rule.required(),
     }),
+    defineField({
+      name: 'rinseRadioUrl',
+      title: 'Lien Rinse Radio',
+      type: 'url',
+      validation: Rule => Rule.uri({
+        scheme: ['https']
+      }),
+    }),
   ],
 })
